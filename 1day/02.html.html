@@ -4,16 +4,46 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>02</title>
 	<link rel="stylesheet" href="">
 </head>
 <body>
 	<h1>자바스크립트 02</h1>
-	
+	<h2></h2>
+	<h3></h3>
+	<h4></h4>
 	
 	
 	<script>
-		
+		let height = 182;              // scope: block { }
+		let name = 'insu';             // let 는 중복 선언 X, 값을 할당하지 않아도 된다. { } 안에서 쓰고 버림, 다른 { } 에서는 가능
+		var oldHeight = 180;        //  scope: function
+		const pi = 3.14;               // const 는 할당과 동시에 선언해야 함, const pi; 안댐
+		let isTrue = true;
+		let message = '안녕하세요';
+
+		window.console.log(typeof height); {}
+		console.log(typeof name);
+		console.log(typeof isTrue);
+		document.querySelector('h2').innerText = height;
+		document.querySelector('h3').innerText = name;
+		document.querySelector('h4').innerText = oldHeight;
+
+		console.log(Math.sin(3.14))
+
+		document.write(name);
+
+
+		let num = 3.14;
+		let num2 = '3.14';
+		let num3 = 'insu'
+		console.log(parseInt(num));
+		console.log(parseInt(num2));
+		console.log(Number(num2));
+		console.log(parseInt(num3));
+		console.log(2/0);
+
+
 	</script>
 </body>
 </html>
