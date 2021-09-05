@@ -1,40 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rock paper scissors</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/layout.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>rock paper scissors</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/layout.css">
 </head>
 <body>
-    <div id="game">
-        <h1>rock paper scissors go!!!</h1>
-        <div id="computer">
-            <ul>
-                <li><img src="../images/rock.svg" alt=""></li>
-                <li><img src="../images/paper.svg" alt=""></li>
-                <li><img src="../images/scissors.svg" alt=""></li>
-            </ul>
-        </div>
-        <div id="human">
-            <ul>
-                <li><img src="../images/rock.svg" alt=""></li>
-                <li><img src="../images/paper.svg" alt=""></li>
-                <li><img src="../images/scissors.svg" alt=""></li>
-            </ul>
-        </div>
-        <div>
-            <ul id="resultList">
-                <!--
-                <li class="win"><span>W</span></li>
-                <li class="draw"><span>D</span></li>
-                <li class="lose"><span>L</span></li>
-                -->
-            </ul>
-        </div>
-    </div>
-    
+	<div id="game">
+		<h1>rock paper scissors go!!!</h1>
+		<div id="computer">
+			<ul>
+				<li><img src="../images/rock.svg" alt=""></listyle=>
+				<li><img src="../images/paper.svg" alt=""></li>
+				<li><img src="../images/scissors.svg" alt=""></li>
+			</ul>
+		</div>
+		<div id="human">
+			<ul>
+				<li><img src="../images/rock.svg" alt=""></li>
+				<li><img src="../images/paper.svg" alt=""></li>
+				<li><img src="../images/scissors.svg" alt=""></li>
+			</ul>
+		</div>
+		<div>
+			<ul id="resultList">
+				<!--
+				<li class="win"><span>W</span></li>
+				<li class="draw"><span>D</span></li>
+				<li class="lose"><span>L</span></li>
+				-->
+			</ul>
+		</div>
+	</div>
+	
+
+	<script>
+		
+		const comList = document.querySelectorAll('#computer li')
+		const humanList = document.querySelectorAll('#human li')
+		
+		let num = 0;
+		let comChoiceE = num;
+
+		function comChoice() {
+			comList[0].style.display = 'none';
+			comList[1].style.display = 'none';
+			comList[2].style.display = 'none';
+
+			num += 1;
+			comList[num%3].style.display = 'block';	
+		};
+		const clearId = setInterval(comChoice, 30);
+		
+		humanList[0].addEventListener("click", clickRock)
+		humanList[1].addEventListener("click", clickPaper)
+		humanList[2].addEventListener("click", clickScissors)
+
+		function clickRock() {
+			clearInterval(clearId);
+			comChoiceE = num%3;
+			if (comChoiceE === 0) {
+				console.log('비김')
+			}
+			else if(comChoiceE === 1) {
+				console.log('졌음')
+			}
+			else {
+				console.log('이김')
+			}
+		}
+
+		function clickPaper() {
+			clearInterval(clearId);
+			comChoiceE = num%3;
+			if (comChoiceE === 0) {
+				console.log('이김')
+			}
+			else if(comChoiceE === 1) {
+				console.log('비김')
+			}
+			else {
+				console.log('졌음')
+			}
+		}
+
+		function clickScissors() {
+			clearInterval(clearId);
+		}
+		
+					
+
+
+
+    </script>
 </body>
 </html>
