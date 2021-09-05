@@ -1,0 +1,21 @@
+h1:hover {
+  color: #ffcc00;
+  font-size: 30px;
+}
+
+/* h1:hover {
+	color:$main-color;
+	font-size:$font-size;
+} */
+.loginBox {
+  width: 500px;
+}
+
+.loginBox #id {
+  border: 1px solid #f00;
+}
+
+.loginBox #password {
+  border: 1px solid #0f0;
+}
+/*# sourceMappingURL=layout.css.map */

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AACC,EADC,AACA,MAAM,AAAC,CACP,KAAK,CCHK,IAAO,CDIjB,SAAS,CCDA,IAAI,CDEb,AAQF,AAAA,SAAS,AAAC,CACT,KAAK,CAAE,KAAK,CAOZ,AARD,AAEC,SAFQ,CAER,GAAG,AAAC,CACH,MAAM,CAAE,cAAc,CACtB,AAJF,AAKC,SALQ,CAKR,SAAS,AAAC,CACT,MAAM,CAAE,cAAc,CACtB",
+    "sources": [
+        "../scss/layout.scss",
+        "../scss/_vars.scss"
+    ],
+    "names": [],
+    "file": "layout.min.css"
+}

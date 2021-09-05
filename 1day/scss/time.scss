@@ -1,0 +1,21 @@
+@import "vars";
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	width: 100vw;
+	background-color: #cfb6c0;
+	font-weight: 300;
+	overflow: hidden;
+}
+.time {
+	height: 100vh;
+	color: #fff;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 10vw;
+	@include longShadow( darken( #cfb6c0, 10), right, 600)
+}

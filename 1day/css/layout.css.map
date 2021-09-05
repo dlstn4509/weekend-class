@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AACC,EADC,AACA,MAAM,CAAC,EACP,KAAK,ECHK,OAAO,EDIjB,SAAS,ECDA,IAAI,GDEb;;AAEF;;;IAGI;AAGJ,AAAA,SAAS,CAAC,EACT,KAAK,EAAE,KAAK,GAOZ;;AARD,AAEC,SAFQ,CAER,GAAG,CAAC,EACH,MAAM,EAAE,cAAc,GACtB;;AAJF,AAKC,SALQ,CAKR,SAAS,CAAC,EACT,MAAM,EAAE,cAAc,GACtB",
+    "sources": [
+        "../scss/layout.scss",
+        "../scss/_vars.scss"
+    ],
+    "names": [],
+    "file": "layout.css"
+}

@@ -1,0 +1,22 @@
+@import "vars";
+h1 {
+	&:hover {
+		color:$main-color;
+		font-size:$font-size;
+	}
+}
+/* h1:hover {
+	color:$main-color;
+	font-size:$font-size;
+} */
+
+
+.loginBox {
+	width: 500px; 	
+	#id {
+		border: 1px solid #f00;
+	}
+	#password {
+		border: 1px solid #0f0;
+	}
+}

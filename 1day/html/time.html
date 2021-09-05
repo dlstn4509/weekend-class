@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>time</title>
+	<link rel="stylesheet" href="../css/time.css">
+	<script src="../../0.BASE/05_util.js"></script>
+	<script src="../../0.BASE/moment.min.js"></script>
+</head>
+<body>
+	<div class="time"></div>
+	<script>		
+
+
+	/* 	(function displayTime() {
+			const now = new Date();
+			const hour = now.getHours();
+			const min = now.getMinutes();
+			const sec = now.getSeconds();
+			const timeDiv = document.querySelector('.time')
+			timeDiv.innerHTML = zpp(hour) +':'+ zpp(min) +':'+ zpp(sec)
+			setTimeout(displayTime, 1000)
+		})(); */
+
+		(function displayTime() {
+			const timeDiv = document.querySelector('.time')
+			timeDiv.innerHTML = moment(new Date()).format('YYYY-MM-DD HH:mm:ss')
+			setTimeout(displayTime, 1000)
+		})();
+
+		function zpp(v) {
+			return v < 10 ? '0' + v : v
+		}
+
+	</script>
+</body>
+</html>

@@ -43,6 +43,31 @@
 		console.log(parseInt(num3));
 		console.log(2/0);
 
+		
+
+
+		const jjang = {
+			name: '최인수',
+			nickName: ['정준하', '정형돈', '노홍철', 1, {a:'aaa', b:'bbb'}],
+			age: 30,
+			weight: 80,
+		}
+
+		
+		console.log(jjang.name);
+		console.log(jjang.nickName[0]);
+		console.log(jjang.nickName[3]);
+		console.log(jjang.nickName[4].a);
+		console.log(jjang.nickName[4].b);
+		console.clear();
+
+		const now = new Date();
+		const day = now.getDay();
+		const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT' ];
+		console.log(days[2]);
+		console.log(days[day]);
+		console.log(days[day%7]);
+
 
 	</script>
 </body>
