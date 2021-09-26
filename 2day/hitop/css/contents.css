@@ -16,9 +16,9 @@
 
 .h4 { position: relative; margin-bottom: 30px; padding-left: 20px; font-size: 28px; font-weight: 700; }
 
-.h4:before { content: ''; display: block; width: 4px; height: 30px; position: absolute; top: 50%; left: 0; background: #bf0c14; background: -webkit-gradient(linear, left top, left bottom, from(#bf0c14), color-stop(50%, #bf0c14), color-stop(50%, #d9d9d9), to(#d9d9d9)); background: linear-gradient(180deg, #bf0c14 0%, #bf0c14 50%, #d9d9d9 50%, #d9d9d9 100%); -webkit-transform: translateY(-50%); transform: translateY(-50%); }
+.h4:before { content: ''; display: block; width: 4px; height: 30px; position: absolute; top: 50%; left: 0; background: #bf0c14; background: linear-gradient(180deg, #bf0c14 0%, #bf0c14 50%, #d9d9d9 50%, #d9d9d9 100%); transform: translateY(-50%); }
 
-.tab .menu ul li { height: 60px; margin-left: -1px; text-align: center; line-height: 60px; border: 1px solid #d9d9d9; -webkit-box-sizing: border-box; box-sizing: border-box; cursor: pointer; }
+.tab .menu ul li { height: 60px; margin-left: -1px; text-align: center; line-height: 60px; border: 1px solid #d9d9d9; box-sizing: border-box; cursor: pointer; }
 
 .tab .menu ul li.on { color: #fff; background-color: #bf0c14; border-color: #bf0c14; }
 
@@ -48,15 +48,15 @@
 
 #lnb .btnHome { display: block; width: 50px; height: 50px; float: left; position: relative; text-align: center; line-height: 50px; border-right: 1px solid rgba(255, 255, 255, 0.2); border-left: 1px solid rgba(255, 255, 255, 0.2); }
 
-#lnb .btnHome .home { position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+#lnb .btnHome .home { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 
 #lnb .dropMenu { width: 250px; float: left; text-align: center; border-right: 1px solid rgba(255, 255, 255, 0.2); }
 
 #lnb .dropMenu a { display: block; height: 50px; position: relative; line-height: 50px; }
 
-#lnb .dropMenu a .arrow { right: 20px; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
+#lnb .dropMenu a .arrow { right: 20px; transition: all 0.25s ease; position: absolute; top: 50%; transform: translateY(-50%); }
 
-#lnb .dropMenu a.on .arrow { -webkit-transform: translateY(-50%) rotate(180deg); transform: translateY(-50%) rotate(180deg); }
+#lnb .dropMenu a.on .arrow { transform: translateY(-50%) rotate(180deg); }
 
 #lnb .dropMenu ul { display: none; border: 1px solid #d9d9d9; border-top: none; background-color: #fff; }
 
@@ -74,7 +74,7 @@
 
 #summary .summaryTop .txt { width: 50%; height: 100%; position: absolute; top: 0; left: 0; color: #fff; text-align: center; background: url("../images/contents/bgLogo.png") #bf0c14 100% 100% no-repeat; }
 
-#summary .summaryTop .txt .inner { width: 100%; position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+#summary .summaryTop .txt .inner { width: 100%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 
 #summary .summaryTop .txt .inner .main { font-size: 42px; line-height: 1.2; font-weight: 700; }
 
@@ -108,7 +108,7 @@
 
 #philosophy .philosophyTop { position: relative; }
 
-#philosophy .philosophyTop .txt { width: calc(50% - 40px); position: absolute; top: 40px; bottom: 40px; left: 40px; padding: 40px; color: #fff; background-color: rgba(191, 12, 20, 0.8); -webkit-box-sizing: border-box; box-sizing: border-box; }
+#philosophy .philosophyTop .txt { width: calc(50% - 40px); position: absolute; top: 40px; bottom: 40px; left: 40px; padding: 40px; color: #fff; background-color: rgba(191, 12, 20, 0.8); box-sizing: border-box; }
 
 #philosophy .philosophyTop .txt .eng { font-size: 18px; letter-spacing: 1em; }
 
@@ -148,7 +148,7 @@
 
 #philosophy .strategy02 li .txt { width: 50%; height: 100%; position: absolute; top: 0; padding: 0; background-color: #fff; }
 
-#philosophy .strategy02 li .txt .inner { width: 70%; line-height: 1.5; word-break: keep-all; position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+#philosophy .strategy02 li .txt .inner { width: 70%; line-height: 1.5; word-break: keep-all; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 
 #philosophy .strategy02 li .txt .inner .main { margin-bottom: 30px; font-size: 24px; }
 
@@ -204,13 +204,13 @@
 
 #ci .ciBox .color { width: calc(50% - 5px); height: 120px; position: relative; margin-top: 30px; color: #fff; }
 
-#ci .ciBox .color .main { left: 30px; font-size: 42px; font-weight: 700; position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
+#ci .ciBox .color .main { left: 30px; font-size: 42px; font-weight: 700; position: absolute; top: 50%; transform: translateY(-50%); }
 
-#ci .ciBox .color .code { right: 30px; position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
+#ci .ciBox .color .code { right: 30px; position: absolute; top: 50%; transform: translateY(-50%); }
 
 #ci .ciBox .color .code span { display: block; position: relative; margin: 3px 0; padding-left: 10px; }
 
-#ci .ciBox .color .code span:before { content: ''; display: block; width: 3px; height: 3px; left: 0; background-color: #fff; position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
+#ci .ciBox .color .code span:before { content: ''; display: block; width: 3px; height: 3px; left: 0; background-color: #fff; position: absolute; top: 50%; transform: translateY(-50%); }
 
 #ci .ciBox .color.red { float: left; background-color: #bf0c14; }
 
@@ -236,19 +236,19 @@
 
 #patent .patentList { margin: -10px; }
 
-#patent .patentList li { width: calc(25% - 20px); padding: 20px; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #f8f8f8; border: 1px solid #d9d9d9; margin: 10px; text-align: center; }
+#patent .patentList li { width: calc(25% - 20px); padding: 20px; box-sizing: border-box; background-color: #f8f8f8; border: 1px solid #d9d9d9; margin: 10px; text-align: center; }
 
 #patent .patentList li .img { position: relative; border: 1px solid #d9d9d9; overflow: hidden; }
 
 #patent .patentList li .img:before { content: ''; display: block; padding-top: 140%; }
 
-#patent .patentList li .img img { position: absolute; width: 100%; height: 100%; -o-object-fit: cover; object-fit: cover; left: 0; top: 0; }
+#patent .patentList li .img img { position: absolute; width: 100%; height: 100%; object-fit: cover; left: 0; top: 0; }
 
 #patent .patentList li .desc { margin-top: 20px; line-height: 1.5; }
 
 #patent .patentList li .desc .no { font-size: 14px; color: #999; margin-bottom: 10px; }
 
-#patent .patentList li .desc .title { display: -webkit-box; height: 3em; overflow: hidden; line-height: 1.5; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+#patent .patentList li .desc .title { display: -webkit-box; height: 3em; overflow: hidden; line-height: 1.5; -webkit-line-clamp: 2; }
 
 .pagination { text-align: center; margin-top: 30px; }
 
@@ -260,7 +260,7 @@
 
 .customoverlay { float: left; position: relative; bottom: 85px; border: 1px solid #ccc; border-bottom: 2px solid #ddd; border-radius: 6px; }
 
-.customoverlay:nth-of-type(n) { border: 0; -webkit-box-shadow: 0px 1px 2px #888; box-shadow: 0px 1px 2px #888; }
+.customoverlay:nth-of-type(n) { border: 0; box-shadow: 0px 1px 2px #888; }
 
 .customoverlay a { display: block; overflow: hidden; font-size: 14px; color: #000; text-align: center; text-decoration: none; background: #d95050; background: #d95050 url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center; border-radius: 6px; font-weight: bold; }
 

@@ -32,6 +32,8 @@
 
 #mainVisual .pagination { position: absolute; bottom: 150px; text-align: center; z-index: 5; width: 100%; transition: all 0.25s ease; }
 
+#mainVisual .pagination.on { bottom: 0; pointer-events: none; display: none; }
+
 #mainVisual .pagination .bullets { display: inline-block; }
 
 #mainVisual .pagination .autoBox { display: inline-block; }
@@ -44,7 +46,9 @@
 
 #mainVisual .pagination .swiper-pagination-bullet-active { background-color: #fff; width: 80px; }
 
-#mainVisual .iconScroll { position: absolute; bottom: 30px; left: 50%; z-index: 5; font-size: 16px; color: #fff; letter-spacing: 0.2em; /* 알파벳 글자하나의 크기를 1em(M)으로 보는 단위 */ transform: translateX(-50%); transition: all 0.25s ease; }
+#mainVisual .iconScroll { position: absolute; bottom: 30px; left: 50%; z-index: 5; font-size: 16px; color: #fff; letter-spacing: 0.2em; /* 알파벳 글자하나의 크기를 1em(M)으로 보는 단위 */ transform: translateX(-50%); transition: all 0.5s ease; }
+
+#mainVisual .iconScroll.on { bottom: 0; pointer-events: none; display: none; }
 
 #mainVisual .iconScroll:before { content: ""; display: block; width: 16px; height: 30px; margin: 0 auto 10px; border: 2px solid #fff; border-radius: 100px; }
 

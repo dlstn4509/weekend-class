@@ -93,13 +93,18 @@
     //         opacity: 1;
     //     }
     // }
-    .pagination {
+    .pagination {   
         position: absolute;
         bottom:150px;
         text-align: center;
         z-index: 5;
         width:100%;
         transition: all 0.25s ease;
+        &.on {
+            bottom: 0;
+            pointer-events: none;
+            display: none;
+        }
         .bullets {
             display: inline-block;
 
@@ -115,6 +120,7 @@
             }
         }
         .swiper-pagination-bullet {
+            
             margin: 0 5px;
             width:20px;
             height: 20px;
@@ -138,7 +144,12 @@
         color:#fff;
         letter-spacing: 0.2em;  /* 알파벳 글자하나의 크기를 1em(M)으로 보는 단위 */
         transform:translateX(-50%);
-        transition: all 0.25s ease;
+        transition: all 0.5s ease;
+        &.on {
+            bottom: 0;
+            pointer-events: none;
+            display: none;
+        }
         &:before {
             content: "";
             display: block;

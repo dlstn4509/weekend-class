@@ -1,5 +1,5 @@
 body {
-  font-family: 'Titillium Web', 'Noto Sans KR', sans-serif;
+  font-family: 'Titillium Web', 'Noto Sans KR',  sans-serif;
 }
 
 #header {
@@ -8,14 +8,48 @@ body {
   position: fixed;
   z-index: 99;
   color: #fff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  overflow: hidden;
   transition: all 0.5s ease;
 }
 
-#header.on {
-  border-bottom: none;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-  background-color: rgba(0, 0, 0, 0.5);
+#header:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 89px;
+  background-color: #fff;
+}
+
+#header.open {
+  height: 450px;
+  background-color: #fff;
+  color: #111;
+}
+
+#header.open #logo a img.color {
+  opacity: 1;
+}
+
+#header.open #logo a img.white {
+  opacity: 0;
+}
+
+#header.open:before {
+  background-color: #d9d9d9;
+}
+
+#header.open .utilMenu {
+  color: #111;
+}
+
+#header.open .utilMenu .btnOnline {
+  border-color: #111;
+}
+
+#header.open .utilMenu .btnSitemap span {
+  background-color: #111;
 }
 
 #header #logo {
@@ -26,6 +60,15 @@ body {
 #header #logo a {
   display: block;
   padding: 15px 0;
+}
+
+#header #logo a img {
+  position: absolute;
+  transition: all 0.25s ease;
+}
+
+#header #logo a img.color {
+  opacity: 0;
 }
 
 #header #gnb {
@@ -79,36 +122,23 @@ body {
   background-color: #fff;
 }
 
-#header #gnb .list > li:hover .depth01 {
-  background-color: #bf0c14;
-}
-
-#header #gnb .list > li:hover .depth01:after {
-  transform: scaleX(1);
+#header #gnb .list > li:hover .depth02 {
+  background-color: #eee;
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
 }
 
 #header #gnb .list > li .depth02 {
   padding: 15px 10px 25px;
   font-size: 16px;
   border-radius: 0 0 10px 10px;
-  background-color: #bf0c14;
-  display: none;
+  height: 450px;
 }
 
 #header #gnb .list > li .depth02 a {
   display: block;
   padding: 10px 0;
   border-radius: 5px;
-}
-
-#header #gnb .list > li .depth02 a:hover {
-  box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.1);
-  background-color: #960a11;
-}
-
-#header #gnb.fullDown .list > li .depth02 {
-  display: block;
-  border-radius: 0;
 }
 
 #header .utilMenu {
@@ -278,113 +308,4 @@ body {
   bottom: 50px;
   pointer-events: auto;
 }
-
-body.all {
-  overflow: auto;
-}
-
-body.all #allMenu {
-  pointer-events: auto;
-}
-
-#allMenu {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  text-align: center;
-  font-size: 0;
-  left: 0;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 99999;
-  opacity: 0;
-  pointer-events: none;
-}
-
-#allMenu .btnClose {
-  width: 30px;
-  height: 30px;
-  margin-left: 10px;
-  vertical-align: middle;
-  position: absolute;
-  right: 50px;
-  top: 30px;
-  cursor: pointer;
-}
-
-#allMenu .btnClose span {
-  display: block;
-  width: 30px;
-  height: 2px;
-  background-color: #fff;
-  position: absolute;
-  left: 0;
-  transition: all 0.25s ease;
-}
-
-#allMenu .btnClose span:nth-child(1) {
-  top: 12px;
-  transform: rotate(-45deg);
-}
-
-#allMenu .btnClose span:nth-child(2) {
-  left: -50px;
-  opacity: 0;
-}
-
-#allMenu .btnClose span:nth-child(3) {
-  top: 12px;
-  transform: rotate(45deg);
-}
-
-#allMenu .list > li {
-  color: #fff;
-  display: inline-block;
-  vertical-align: top;
-  width: 300px;
-  height: 500px;
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-#allMenu .list > li:last-child {
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-#allMenu .list > li .depth01 {
-  display: block;
-  height: 90px;
-  position: relative;
-  padding: 0 50px;
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 92px;
-  transition: all 0.25s ease;
-}
-
-#allMenu .list > li .depth01:after {
-  content: '';
-  display: block;
-  height: 2px;
-  position: absolute;
-  right: 10px;
-  left: 10px;
-  transform: scaleX(0);
-  transition: transform 0.25s;
-  background-color: #fff;
-}
-
-#allMenu .list > li .depth02 {
-  padding: 15px 0 15px 50px;
-  font-size: 16px;
-  border-radius: 0 0 10px 10px;
-}
-
-#allMenu .list > li .depth02 a {
-  display: block;
-  padding: 10px 0;
-  border-radius: 5px;
-}
-/*# sourceMappingURL=layout.css.map */
+/*# sourceMappingURL=layout-fulldown.css.map */

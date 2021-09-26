@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="../css/main.css">
 	<link rel="stylesheet" href="../css/contents.css">
 	<link rel="stylesheet" href="../css/splitting.css">
+	<script src="../../0.BASE/04_jquery.min.js"></script>
 	<script src="../js/swiper-bundle.min.js"></script>
 	<script src="../js/gsap/gsap.min.js"></script>
 	<script src="../js/splitting.min.js"></script>
@@ -35,7 +36,7 @@
 			<h2 class="hidden">global navigation</h2>
 			<ul class="list">
 				<li>
-					<a href="summary.html" class="depth01">Company</a>
+					<a href="" class="depth01">Company</a>
 					<ul class="depth02">
 						<li><a href="summary.html">사업개요</a></li>
 						<li><a href="greeting.html">인사말</a></li>
@@ -295,6 +296,68 @@
 		<a href="" class="btnEstimate">견적문의 바로가기</a>
 	</section>
 	<!-- customer end -->
+
+
+	<!-- All MENU -->
+	<nav id="allMenu">
+		<h2 class="hidden">global navigation</h2>
+		<button class="btnClose">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<ul class="list">
+			<li>
+				<a href="" class="depth01">Company</a>
+				<ul class="depth02">
+					<li><a href="summary.html">사업개요</a></li>
+					<li><a href="greeting.html">인사말</a></li>
+					<li><a href="philosophy.html">경영이념</a></li>
+					<li><a href="history.html">회사연혁</a></li>
+					<li><a href="ci.html">CI</a></li>
+					<li><a href="organization.html">조직도</a></li>
+					<li><a href="location.html">오시는 길</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="business.html" class="depth01">Business</a>
+				<ul class="depth02">
+					<li><a href="business.html">경관용포장재</a></li>
+					<li><a href="">기능성포장재</a></li>
+					<li><a href="">조립식바닥재</a></li>
+					<li><a href="">스포츠필드</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="" class="depth01">PR</a>
+				<ul class="depth02">
+					<li><a href="patent.html">특허인증</a></li>
+					<li><a href="">시공실적</a></li>
+					<li><a href="">시공사진</a></li>
+					<li><a href="">카달로그</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="" class="depth01">Customer</a>
+				<ul class="depth02">
+					<li><a href="">공지사항</a></li>
+					<li><a href="">나라장터 등록물품</a></li>
+					<li><a href="">견적문의</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="" class="depth01">Recruit</a>
+				<ul class="depth02">
+					<li><a href="">인재상</a></li>
+					<li><a href="">인사&복지</a></li>
+					<li><a href="">채용공고</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+<!-- All MENU end -->
+
+
 	<footer id="footer">
 		<div class="utilMenu">
 			<ul class="list">
@@ -334,7 +397,67 @@
 			initialSlide : 2,
 			loop : true,
 			speed: 500,
+			navigation: {
+				nextEl: '#mainVisual .btnNext',
+				prevEl: '#mainVisual .btnPrev',
+			},
+			pagination: {
+				el: '#mainVisual .pagination .bullets',
+				type: 'bullets',
+				clickable: true,
+			},
+			autoplay: {
+				delay: 1000,
+				disableOnInteraction: false,
+				pauseOnMouseEnter: true,
+			},
 		});
+
+		$('.pause').on('click', () => {
+			mainVisual.autoplay.stop()
+			$('.pause').hide()
+			$('.pause').siblings().show()
+			// $('.auto').show()
+		})
+		
+		$('.auto').on('click', function() {
+			mainVisual.autoplay.start()
+			$('.auto').hide()
+			$('.pause').show()
+		})
+
+		$('#gnb .list li').on('mouseenter', function() {
+			$(this).find('.depth02').stop().slideDown(500)
+		})
+
+		$('#gnb .list li').on('mouseleave', function() {
+			$(this).find('.depth02').stop().slideUp(500)
+		})
+
+		$('.btnSitemap').on('click', function() {
+			$('body').addClass('all')
+			allMenuTimeline.play()
+		})
+		$('#allMenu .btnClose').click(function() {
+			$('body').removeClass('all')
+			allMenuTimeline.reverse()
+		})
+
+/* 		document.querySelector('.btnSitemap').addEventListener('click', function() {
+			if(this.classList.contains('on')) {
+				this.classList.remove('on')
+			}
+			else {
+				this.classList.add('on')
+			}
+		})
+		*/
+
+
+
+
+
+
 
 		const newsSlider = new Swiper('#news .listBox', {
 			loop : true,
@@ -344,32 +467,8 @@
 			slidesPerGroup: 3,
 		});
 
-		const timeline = gsap.timeline()
 
-		function plus(a, b) {
-			return a + b
-		}
-		let num = plus(3, 5)
-		console.log(num)
-		
-		Splitting();
-		timeline.from('#mainVisual .slogan .main .char', {
-			duration: 2,
-			opacity : 0,
-			ease: "bounce.out",
-			stagger : 0.1, // 여러개 있을때
-			y: -100
-		})
 
-		.from('#mainVisual .slogan .sub .char', {
-			duration: 2,
-			opacity : 0,
-			ease: "power4.out",
-			stagger : 0.05, // 여러개 있을때
-			x: 100,
-			skewX : -50,
-		},"-=1");
-		
 
 		/* gsap.from('#mainVisual .slogan .main .main1', {
 			duration: 2,
@@ -387,7 +486,10 @@
 		gsap.from('#mainVisual .slogan .main .main4', {
 			duration: 2, ease: "expo.out", y: -500
 		}); */
+
+
 	</script>
+	<script src="../js/common.js"></script>
 </body>
 
 </html>
