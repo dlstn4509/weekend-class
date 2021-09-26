@@ -343,25 +343,32 @@
 			spaceBetween : 30, // margin-right 설정
 			slidesPerGroup: 3,
 		});
+
+		const timeline = gsap.timeline()
+
+		function plus(a, b) {
+			return a + b
+		}
+		let num = plus(3, 5)
+		console.log(num)
 		
 		Splitting();
-		gsap.from('#mainVisual .slogan .main .char', {
+		timeline.from('#mainVisual .slogan .main .char', {
 			duration: 2,
 			opacity : 0,
 			ease: "bounce.out",
 			stagger : 0.1, // 여러개 있을때
 			y: -100
-		});
+		})
 
-		gsap.from('#mainVisual .slogan .sub .char', {
+		.from('#mainVisual .slogan .sub .char', {
 			duration: 2,
 			opacity : 0,
 			ease: "power4.out",
 			stagger : 0.05, // 여러개 있을때
 			x: 100,
 			skewX : -50,
-			delay: 4
-		});
+		},"-=1");
 		
 
 		/* gsap.from('#mainVisual .slogan .main .main1', {
