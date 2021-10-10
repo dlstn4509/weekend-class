@@ -1,32 +1,31 @@
 html, body { height: 100%; }
 
-body { font-family: 'Titillium Web', 'Noto Sans KR',  sans-serif; overflow: auto; }
+body { font-family: 'Titillium Web', 'Noto Sans KR', sans-serif; overflow: auto; }
 
-#searchHeader { display: flex; justify-content: center; margin: 50px 0; }
+#datePicker #myChart { width: 1200px; height: 600px; margin: 100px auto 0; }
 
-#searchHeader #searchTxt { width: 600px; height: 50px; padding: 10px 30px; border: 1px solid #d9d9d9; border-radius: 100px; }
+#datePicker #calendar { width: 500px; padding: 15px; background-color: #fff; border-radius: 10px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); border: 1px solid rgba(0, 0, 0, 0.2); }
 
-#searchHeader #btnSearch { box-sizing: content-box; height: 50px; padding: 10px 50px; background-color: #007aaa; border-radius: 100px; margin-left: 20px; font-size: 18px; color: #fff; overflow: hidden; text-shadow: 1px 1px 0 #005577,2px 2px 0 #005577,3px 3px 0 #005577,4px 4px 0 #005577,5px 5px 0 #005577,6px 6px 0 #005577,7px 7px 0 #005577,8px 8px 0 #005577,9px 9px 0 #005577,10px 10px 0 #005577,11px 11px 0 #005577,12px 12px 0 #005577,13px 13px 0 #005577,14px 14px 0 #005577,15px 15px 0 #005577,16px 16px 0 #005577,17px 17px 0 #005577,18px 18px 0 #005577,19px 19px 0 #005577,20px 20px 0 #005577,21px 21px 0 #005577,22px 22px 0 #005577,23px 23px 0 #005577,24px 24px 0 #005577,25px 25px 0 #005577,26px 26px 0 #005577,27px 27px 0 #005577,28px 28px 0 #005577,29px 29px 0 #005577,30px 30px 0 #005577,31px 31px 0 #005577,32px 32px 0 #005577,33px 33px 0 #005577,34px 34px 0 #005577,35px 35px 0 #005577,36px 36px 0 #005577,37px 37px 0 #005577,38px 38px 0 #005577,39px 39px 0 #005577,40px 40px 0 #005577,41px 41px 0 #005577,42px 42px 0 #005577,43px 43px 0 #005577,44px 44px 0 #005577,45px 45px 0 #005577,46px 46px 0 #005577,47px 47px 0 #005577,48px 48px 0 #005577,50px 50px 0 #005577;; }
+#datePicker #calendar .header { display: flex; justify-content: space-between; align-items: center; margin: 30px 0; }
 
-#searchResult { display: flex; justify-content: center; align-items: center; }
+#datePicker #calendar .header .yearAndMonth { font-size: 20px; }
 
-#searchResult .list { width: 1200px; display: flex; flex-wrap: wrap; }
+#datePicker #calendar .header .yearAndMonth .month { font-weight: 700; }
 
-#searchResult .list li { position: relative; }
+#datePicker #calendar .days ul li:first-child { background-color: aquamarine; }
 
-#searchResult .list li:hover:before { border-width: 5px; }
+#datePicker #calendar .days ul li:last-child { background-color: violet; }
 
-#searchResult .list li::before { content: ''; position: absolute; left: 0; top: 0; right: 0; bottom: 0; border: 0 solid #f00; transition: all 0.15s ease; pointer-events: none; }
+#datePicker #calendar .dates ul, #datePicker #calendar .days ul { display: flex; flex-wrap: wrap; }
 
-#searchResult .list li img { width: 100px; }
+#datePicker #calendar .dates ul li, #datePicker #calendar .days ul li { flex-basis: calc(100% / 7 - 4px); margin: 2px; background-color: #111; border-radius: 100%; color: #fff; min-height: 50px; display: flex; justify-content: center; align-items: center; position: relative; }
 
-#recentSearchWord { display: flex; justify-content: center; align-items: center; margin-bottom: 50px; }
+#datePicker #calendar .dates ul li::before, #datePicker #calendar .days ul li::before { content: ''; padding-top: 100%; }
 
-#recentSearchWord .list { width: 1200px; display: flex; flex-wrap: wrap; }
+#datePicker #calendar .dates ul li.blank, #datePicker #calendar .days ul li.blank { pointer-events: none; background-color: transparent; }
 
-#recentSearchWord .list li { padding: 15px 30px; border: 1px solid #d9d9d9; margin: 5px; border-radius: 100px; cursor: pointer; }
+#datePicker #calendar .dates ul li span, #datePicker #calendar .days ul li span { display: flex; position: absolute; left: 0; top: 0; width: 100%; height: 100%; justify-content: center; align-items: center; }
 
-#recentSearchWord .list li:before { content: "#"; display: inline-block; margin-right: 5px; }
+#datePicker #calendar .dates ul li .today, #datePicker #calendar .days ul li .today { background-color: blue; }
 
-#recentSearchWord .list li.on { border-color: #111; }
-/*# sourceMappingURL=layout.css.map */
+#datePicker #calendar .dates ul.today, #datePicker #calendar .days ul.today { background-color: blue; }

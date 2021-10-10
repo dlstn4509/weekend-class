@@ -1,6 +1,6 @@
 <!-- http://naver.me/G99IrYXQ -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
 	<meta charset="UTF-8">
@@ -23,12 +23,40 @@
 	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 	<script src="../js/common.js" defer></script>
 </head>
+
 <body>
+	<div id="datePicker">
+		<input type="text" id="date">
+		<div id="calendar">
+			<div class="header">
+				<button class="btnPrevMonth"><span class="material-icons">
+						arrow_back_ios
+					</span></button>
+				<div class="yearAndMonth">
+					<span class="year">2021</span>
+					<span class="month">October</span>
+				</div>
+				<button class="btnNextMonth"><span class="material-icons">
+						arrow_forward_ios
+					</span></button>
+			</div>
+			<div class="days">
+				<ul class="list"></ul>
+			</div>
+			<div class="dates">
+				<ul class="list"></ul>
+			</div>
+		</div>
+	</div>
 	<div>
 		<canvas id="myChart"></canvas>
 	</div>
+	<div class="corona">
+
+	</div>
 
 </body>
+
 </html>
 
 <!-- http://naver.me/5PSEM4uT -->
