@@ -1,0 +1,14 @@
+@import "vars";
+html,body {
+    height: 100%;
+}
+body {
+    font-family:'Titillium Web', 'Noto Sans KR',  sans-serif;
+    overflow: auto;
+}
+
+#myChart {
+    width: 1200px;
+    height: 600px;
+    margin: 100px auto 0;
+}
