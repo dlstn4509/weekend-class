@@ -4,6 +4,9 @@ $(document).ready(function() {
 		//options here
 		autoScrolling:true,
 		scrollHorizontally: true,
+    navigation: true,
+		navigationTooltips: ['HPPEND', 'BUSINESS', 'PORTFOLIO', 'COMMUNITY', 'PRIVACY'],
+		showActiveTooltip: false,
     onLeave: function(origin, destination, direction){
       console.log(origin.index)
       console.log(destination.index)
@@ -28,6 +31,9 @@ $(document).ready(function() {
         case 2 : 
           portfolioTimeLine.restart()
           break;
+        case 3 : 
+          communityTimeLine.restart()
+          break;
       }
     },
 	});
@@ -47,8 +53,8 @@ gsap.defaults({
   duration: 1,
 })
 
-const mainVisualLine = CSSRulePlugin.getRule("#mainVisual .txtBox strong::after")
 const mainVisualTimeLine = gsap.timeline()
+const mainVisualLine = CSSRulePlugin.getRule("#mainVisual .txtBox strong::after")
 mainVisualTimeLine.from('#mainVisual .txtBox h2 .char', {
   opacity: 0,
   x: 100,
@@ -61,7 +67,7 @@ mainVisualTimeLine.from('#mainVisual .txtBox h2 .char', {
 }, '-= 1')
 .from(mainVisualLine, {
   cssRule: { scaleX: 0 }
-}, '-= 1')
+})
 
 const businessTimeLine = gsap.timeline()
 const businessLine = CSSRulePlugin.getRule("#mainVisual .txtBox strong::after")
@@ -77,12 +83,12 @@ businessTimeLine.from('#business .txtBox h2 .char', {
 }, '-= 1')
 .from(businessLine, {
   cssRule: { scaleX: 0 }
-}, '-= 1')
+})
 .from('#business .iconBox ul li', {
   opacity: 0,
   y: 100,
   stagger: 0.05,
-}, '-= 1')
+})
 
 const portfolioTimeLine = gsap.timeline()
 const portfolioLine = CSSRulePlugin.getRule("#portfolio .txtBox strong::after")
@@ -98,4 +104,30 @@ portfolioTimeLine.from('#portfolio .txtBox h2 .char', {
 }, '-= 1')
 .from(portfolioLine, {
   cssRule: { scaleX: 0 }
+})
+.from('#portfolio .portfolioBox ul li', {
+  opacity: 0,
+  y: 100,
+  stagger: 0.05,
+})
+
+const communityTimeLine = gsap.timeline()
+const communityLine = CSSRulePlugin.getRule("#community .txtBox strong::after")
+communityTimeLine.from('#community .txtBox h2 .char', {
+  opacity: 0,
+  x: 100,
+  stagger: 0.05,
 }, '-= 1')
+.from('#community .txtBox p .char', {
+  opacity: 0,
+  x: 100,
+  stagger: 0.05,
+}, '-= 1')
+.from(communityLine, {
+  cssRule: { scaleX: 0 }
+})
+.from('#community .communityBox ul li', {
+  opacity: 0,
+  y: 100,
+  stagger: 0.05,
+})
