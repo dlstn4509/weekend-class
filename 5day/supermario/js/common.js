@@ -1,13 +1,19 @@
 let amount = 0;
 const zAmount = 5000;
 const wheelAmount = zAmount/2;
+let selectedGnb = 0;
+function showSelectedGnb(num) {
+	$('#menu .list li').eq(num).addClass('on')
+	$('#menu .list li').eq(num).siblings().removeClass('on')
+}
+
 $.ajax({
 	url: 'mario.json',
 	success: function (data) {
 		const marioArray = data.mario
 		const total = marioArray.length
 		$.each(marioArray, function(i, item) {
-			$('#menu .list').append(`<li id="onClick" data-idx=${i}>${item.title}</li>`)
+			$('#menu .list').append(`<li class="on" id="onClick" data-idx=${i}>${item.title}</li>`)
 			$('#main .marioList').append(
 				`
 				<li style="transform:translateZ(${i * -5000}px); z-index: ${total-i}">
@@ -24,6 +30,7 @@ $.ajax({
 				`
 			)
 		})
+		showSelectedGnb(1);
 
 		$(window).on('mousewheel', function(e) {
 			const wheel = e.originalEvent.deltaY
@@ -37,26 +44,16 @@ $.ajax({
 				gsap.to(item, {z:amount - i*zAmount});
 			})
 		})
-
-
-
-
-		var click = document.querySelectorAll('#onClick')
-
-		for(var i = 0; i < click.length; i++) {
-			click[i].addEventListener("click", function() {
-				console.log(this)
-			});
-		}
-		
-		
-
-
-
-
-
-
 	}
 })
 
-
+let lodIdx = 0;
+$('#main').on ('click', '.marioList li', function() {
+	amount = zAmount*$(this).index();
+	const _duration = $('this').index() - oldIdx
+	gsap.to(item, {
+		duration: _duration,
+		z:amount - i*zAmount
+	})
+	oldIdx = $(this).index()
+})

@@ -1,0 +1,16 @@
+html { font-size: 10px; }
+
+body { font-family: "Montserrat", "Noto Sans KR"; font-size: 1.6rem; background-color: #111; }
+
+#header { position: fixed; z-index: 3; display: flex; width: 100%; justify-content: flex-end; padding-right: 50px; }
+
+#main { display: flex; justify-content: center; align-items: center; height: 100vh; }
+
+#main .universe span { display: block; width: 500px; height: 500px; background-color: #fff; border-radius: 100%; }
+
+#footer { position: fixed; bottom: 30px; text-align: center; display: flex; width: 100%; justify-content: center; }
+
+#footer p { color: #fff; background-color: #004ec2; padding: 10px 50px; border-radius: 100px; font-size: 14px; font-weight: 500; overflow: hidden; text-shadow: 1px 1px 0 #00398f,2px 2px 0 #00398f,3px 3px 0 #00398f,4px 4px 0 #00398f,5px 5px 0 #00398f,6px 6px 0 #00398f,7px 7px 0 #00398f,8px 8px 0 #00398f,9px 9px 0 #00398f,10px 10px 0 #00398f,11px 11px 0 #00398f,12px 12px 0 #00398f,13px 13px 0 #00398f,14px 14px 0 #00398f,15px 15px 0 #00398f,16px 16px 0 #00398f,17px 17px 0 #00398f,18px 18px 0 #00398f,19px 19px 0 #00398f,20px 20px 0 #00398f,21px 21px 0 #00398f,22px 22px 0 #00398f,23px 23px 0 #00398f,24px 24px 0 #00398f,25px 25px 0 #00398f,26px 26px 0 #00398f,27px 27px 0 #00398f,28px 28px 0 #00398f,30px 30px 0 #00398f;; }
+
+@keyframes moveMario { 0% { transform: translateY(0); }
+  100% { transform: translateY(100px); } }

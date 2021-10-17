@@ -227,6 +227,9 @@ body {
 				position: absolute;
 				transition: all 0.25s ease;
 			}
+			&.on {
+				color: #111;
+			}
 		}
 	}
 }
